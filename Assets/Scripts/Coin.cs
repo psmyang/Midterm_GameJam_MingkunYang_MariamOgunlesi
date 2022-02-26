@@ -9,6 +9,7 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.gameObject.GetComponent<Obstacle>() != null)
         {
             Destroy(gameObject);
@@ -21,8 +22,9 @@ public class Coin : MonoBehaviour
         }
 
         GameManager.inst.IncrementScore();
-
+        GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
         Destroy(gameObject);
+
     }
 
     private void Start()

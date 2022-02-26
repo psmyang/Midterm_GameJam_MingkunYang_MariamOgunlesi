@@ -7,7 +7,15 @@ public class ButtonBehaviour : MonoBehaviour
 {
     public void PlayButtonClicked()
     {
+        GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
         SceneManager.LoadScene("Level");
 
+
+
+    }
+    public void ExitGame()
+    {
+        GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
+        Application.Quit();
     }
 }

@@ -69,7 +69,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        SceneManager.LoadScene("GameOver");
     }
 
     public void Jump(InputAction.CallbackContext context)

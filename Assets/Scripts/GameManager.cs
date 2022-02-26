@@ -17,22 +17,12 @@ public class GameManager : MonoBehaviour
     {
         score++;
         scoreText.text = "Coin: " + score;
-        // Increase the player's speed
-        //playerMovement.speed += playerMovement.speedIncreasePerPoint;
+
+        playerMovement.speed += playerMovement.speedIncreasePerPoint;
     }
 
     private void Awake()
     {
         inst = this;
-    }
-
-    private void Start()
-    {
-
-    }
-
-    private void Update()
-    {
-
     }
 }

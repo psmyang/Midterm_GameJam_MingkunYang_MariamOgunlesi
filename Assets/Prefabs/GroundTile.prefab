@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8594618031839502120}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ObstacleSpawnMiddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 580387630413876268}
   - component: {fileID: 2046832642799173167}
   - component: {fileID: 5460129642238974787}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5756671442447396106}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ObstacleSpawnLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4746773067820171663}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NextSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 9129666609563711252}
   - component: {fileID: 7915397731595170885}
   - component: {fileID: 4211788747817220604}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,6 +250,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 1806023917618509284, guid: f227eb76ccdca074db9ebae9969cef32, type: 3}
   obstaclePrefab: {fileID: 773970908469985313, guid: 274b045a438bbdc44b10b596f0805d49, type: 3}
+  tallObstaclePrefab: {fileID: 773970908469985313, guid: bc29a2f1cc1612441a6fc9ddd83462c6, type: 3}
+  tallObstacleChance: 0.2
 --- !u!1 &5248276801733536305
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7036540085074576606}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ObstacleSpawnRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

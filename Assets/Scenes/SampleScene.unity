@@ -342,7 +342,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 856886868}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0043f11b786af649a859835631a2801, type: 3}
+  m_Script: {fileID: 11500000, guid: 56a67d001e5020e48b7b2eba1934ba7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   groundTile: {fileID: 4581794556170067597, guid: 6db86c03bc0b5034eb29658bd27d4e2f, type: 3}
@@ -553,7 +553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1388658321}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 1752522400}
 --- !u!4 &1203160952
 Transform:
   m_ObjectHideFlags: 0
@@ -683,6 +683,11 @@ MonoBehaviour:
   speed: 10
   rb: {fileID: 1752522401}
   horizontalMultiplier: 1.7
+  speedIncreasePerPoint: 0.5
+  jumpForce: 600
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!54 &1752522401
 Rigidbody:
   m_ObjectHideFlags: 0

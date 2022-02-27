@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-
     [SerializeField] float turnSpeed = 90f;
 
     private void OnTriggerEnter(Collider other)
@@ -12,20 +11,21 @@ public class Coin : MonoBehaviour
 
         if (other.gameObject.GetComponent<Obstacle>() != null)
         {
-            GetComponent<AudioSource>().Play();
+            
             Destroy(gameObject);
             return;
         }
 
         if (other.gameObject.name != "AmyCharacter")
         {
+            
             return;
         }
 
         GameManager.inst.IncrementScore();
 
         Destroy(gameObject);
-
+        
     }
 
     private void Start()
@@ -36,5 +36,6 @@ public class Coin : MonoBehaviour
     private void Update()
     {
         transform.Rotate(0, 0, turnSpeed * Time.deltaTime);
+        
     }
 }

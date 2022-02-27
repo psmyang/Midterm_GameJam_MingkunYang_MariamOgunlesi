@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
     public InputAction playerControls;
     Vector2 moveDirection = Vector2.zero;
 
+    [SerializeField]
+    private InputActionReference pauseControl;
+
     bool alive = true;
 
     private AudioSource audioSource;
@@ -29,6 +32,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+    [SerializeField]
+    private GameObject pausePanel;
+
     private readonly int MovementSpeedHash = Animator.StringToHash("MovementSpeed");
     private readonly int IsFallingHash = Animator.StringToHash("IsFalling");
     private readonly int IsDeadHash = Animator.StringToHash("IsDead");
@@ -37,11 +43,16 @@ public class PlayerMovement : MonoBehaviour
     private void OnEnable()
     {
         playerControls.Enable();
+        pauseControl.action.Enable();
+
+
     }
 
     private void OnDisable()
     {
         playerControls.Disable();
+        pauseControl.action.Disable();
+
     }
 
     private void Awake()
@@ -70,8 +81,11 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = playerControls.ReadValue<Vector2>();
         animator.SetFloat(MovementSpeedHash, (Mathf.Abs(moveDirection.x) + Mathf.Abs(moveDirection.y)));
 
-        
-
+        // Check Pause Input
+        if (pauseControl.action.triggered)
+        {
+            PauseGame();
+        }
 
         //if (Input.GetKeyDown(KeyCode.Space))
         //{
@@ -138,5 +152,15 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
+    }
+
+    void PauseGame()
+    {
+        Debug.Log("Player pressed pause");
+        Time.timeScale = 0;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        pausePanel.SetActive(true);
     }
 }

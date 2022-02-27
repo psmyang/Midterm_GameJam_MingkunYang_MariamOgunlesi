@@ -12,17 +12,18 @@ public class Coin : MonoBehaviour
 
         if (other.gameObject.GetComponent<Obstacle>() != null)
         {
+            GetComponent<AudioSource>().Play();
             Destroy(gameObject);
             return;
         }
 
-        if (other.gameObject.name != "Player")
+        if (other.gameObject.name != "AmyCharacter")
         {
             return;
         }
 
         GameManager.inst.IncrementScore();
-        GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
+
         Destroy(gameObject);
 
     }

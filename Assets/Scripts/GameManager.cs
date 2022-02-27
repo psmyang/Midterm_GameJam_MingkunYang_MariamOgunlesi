@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-
+    [SerializeField] private AudioSource coinEffect;
     static public int score;
     public static GameManager inst;
 
@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public void IncrementScore()
     {
         score++;
+        coinEffect.Play();
         scoreText.text = "Coin: " + score;
 
         playerMovement.speed += playerMovement.speedIncreasePerPoint;

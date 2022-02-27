@@ -110,23 +110,33 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded)
         {
-
+            
             rb.AddForce(Vector3.up * jumpForce);
-            //animator.SetBool(IsFallingHash, false);
-
-            if (Mathf.Abs(jumpForce) > 100)
-            {
-                animator.SetBool(IsFallingHash, true);
-                audioSource.Play();
+            animator.SetBool(IsFallingHash, true);
 
 
-            }
-            else
-            {
-                animator.SetBool(IsFallingHash, true);
 
-            }
+
+            //if (Mathf.Abs(jumpForce) > 200)
+            //{
+            //    animator.SetBool(IsFallingHash, true);
+            //    audioSource.Play();
+
+
+            //}
+            //else
+            //{
+            //    animator.SetBool(IsFallingHash, false);
+
+            //}
         }
-       
+        else
+        {
+            //jumpForce = 0;
+            animator.SetBool(IsFallingHash, false);
+
+
+        }
+
     }
 }
